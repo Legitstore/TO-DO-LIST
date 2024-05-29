@@ -52,16 +52,6 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).get(*args, **kwargs)
 
 
-
-
-
-
-
-
-
-
-
-
 class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'tasks'
@@ -97,34 +87,15 @@ class TaskCreate(LoginRequiredMixin, CreateView):
         return super(TaskCreate, self).form_valid(form)
 
 
-
-
-
-
-
-
-
-
-
-
-
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     fields = ['title', 'description', 'complete']
     success_url = reverse_lazy('tasks')
 
 
-
-
 class DeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = 'task'
     success_url = reverse_lazy('tasks')
-
-
-
-
-
-
 
 
